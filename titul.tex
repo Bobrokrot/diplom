@@ -1,0 +1,270 @@
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage{misccorr}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+
+\def\Rspace{\mathbb{R}}
+
+\begin{document}
+
+
+\begin{titlepage}
+  \begin{center}
+
+    	{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ <<МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ имени М.В. ЛОМОНОСОВА>>}
+    \vspace{0.4cm}
+    
+    {ФИЗИЧЕСКИЙ ФАКУЛЬТЕТ}
+    \vspace{0.4cm}
+    
+    {КАФЕДРА МАТЕМАТИЧЕСКОГО МОДЕЛИРОВАНИЯ И ИНФОРМАТИКИ}
+    \vspace{2.0cm}
+    
+	{БАКАЛАВАРСКАЯ РАБОТА}    
+    \vspace{0.4cm}
+    
+    {\LARGE \textbf{<<КОМПЬЮТЕРНАЯ МОДЕЛЬ РЕМАСШТАБИРОВАНИЯ СЛОЖНЫХ СЦЕН ДЛЯ МОДЕЛЕЙ ПРОЦЕССОВ ПЕРЕНОСА>>}}
+  \bigskip
+    
+\end{center}
+\vfill
+
+\hfill\begin{minipage}{0.4\textwidth}
+	\begin{flushright}
+	Выполнил студент\\
+	435 группы\\
+	Дейнека Даниил Андреевич\\
+		\begin{minipage}{\textwidth}
+		\vspace{0.8cm}
+		\underline{\hspace{6.2cm}}\\
+		\centering
+		\small подпись студента
+		\end{minipage}
+	\end{flushright}
+\end{minipage}%
+\bigskip
+\bigskip
+
+\hfill\begin{minipage}{0.4\textwidth}
+	\begin{flushright}
+	Научный руководитель\\
+	к.т.н., доцент Грачёв Е.А.\\
+		\begin{minipage}{\textwidth}
+		\vspace{0.8cm}
+		\underline{\hspace{6.2cm}}\\
+		\centering
+		\small подпись научного руководителя
+		\end{minipage}
+	\end{flushright}
+\end{minipage}
+
+\bigskip
+\vfill
+
+\begin{minipage}{0.4\textwidth}
+	\begin{flushleft}
+	Допущена к защите <дата>\\
+		\vspace{0.3cm}
+		Зав.кафедрой\underline{\hspace{3.0cm}}\\
+		\centering
+		\small подпись зав.кафедрой
+	\end{flushleft}
+\end{minipage}
+
+
+\vfill
+
+
+\begin{center}
+  Москва\\
+  2018 г.
+\end{center}
+
+\end{titlepage}
+
+
+\section{Введение}
+
+В некоторых прикладных областях, таких как геологическая разведка и нефтедобыча, существует проблема предсказания некоторого свойства объекта в пространстве по известной точной информации о его локальной структуре — карте признака. Одной из подзадач данной проблемы является ремасштабирование карт признаков.
+
+При переходе на большие масштабы часто возникает ситуация, когда необходимо состыковать несколько карт признаков, чтобы получить одну карту объекта большего размера. Одним из подходов для получения карт является их генерация с помощью нейросетевых методов — в этом случае различные карты признаков получаются независимо друг от друга, из-за чего при их стыковке можно наблюдать резкую границу между ними. В связи с этим данная работа ставит перед собой задачу склейки карт признаков.
+
+\section{Математическая постановка задачи}
+
+Даны две $n$-мерных карт признака, которые пересекаются между собой. Каждую карту можно рассматривать как функцию $n$ переменных, заданной на некоторой области определения. Введём следующие обозначения (см. Рис. \ref{notations}):
+
+$S$ — замкнутое подмножество $\Rspace^n$, область определения одной карты;
+
+$\Omega$ — замкнутое подмножество $S$, область пересечения данных карт;
+
+$\delta\Omega$ — граница множества $\Omega$;
+
+$f : \Rspace^n \longrightarrow \Rspace^1$ — скалярная неизвестная функция, определённая на $\Omega$;
+
+$f^* : \Rspace^n \longrightarrow \Rspace^1$ — скалярная известная функция, определённая на $S$;
+
+
+
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=0.8\textwidth]{images/notations.jpg}
+  \caption{Интерполяция $f$ известной функции $f^*$ в области $\Omega$.}\label{notations}
+\end{figure}
+
+Одной из интерполяций функции $f$ в области $\Omega$ является мембранная интерполяция, определённая как решение задачи минимизации \cite{Perez}
+\begin{equation}\label{min}
+\min_f \int\int_\Omega |\nabla f-\textbf{v}|^2
+\end{equation}
+с учётом граничных условий Дирихле
+\begin{equation}\label{dirichle}
+f|_{\delta\Omega} = f^*_{\delta\Omega},
+\end{equation}
+где $\textbf{v}$ — так называемый вектор \textit{направлений}, который в данном случае выбирается равным градиенту одного из изображений \cite{Matias}%!!!%.
+
+Поставленная задача является $n$-мерной вариационной задачей первого порядка. Рассмотрим обобщённый случай такой задачи:
+\begin{equation}
+	\begin{cases}
+		J(f)=\int_\Omega L(x_1,\ldots,x_n,f,f_{x_1},\ldots,f_{x_n})dx_1 \ldots dx_n \\
+		f = g, \; (x_1,\ldots,x_n) \in \delta\Omega \\
+		\tilde f = \arg\min_f J(f),
+	\end{cases}
+\end{equation}
+
+где $f_{x_i} = \frac{\partial f}{\partial x_i}, i=1,\ldots,n$ и $g$ — некоторая непрерывная функция.
+
+Согласно \cite{Springer}, если функция $f$ является решением многомерной обобщённой вариационной задачи, то она также удовлетворяет уравнению Эйлера-Лагранжа на $\Omega$:
+\begin{equation}
+\frac{\partial L}{\partial f} - \sum_{i=1}^n \frac{\partial L_{f_{x_i}}}{\partial x_i} = 0,
+\end{equation}
+
+где $L_{f_{x_i}} = \frac{\partial L}{\partial f_{x_i}}$.
+
+При $n=2$ соответственно получаем:
+\begin{equation}\label{Euler}
+\frac{\partial L}{\partial f} - \frac{\partial L_{f_x}}{\partial x} - \frac{\partial L_{f_y}}{\partial y} = 0.
+\end{equation}
+
+Вернёмся к исходной задаче. Подынтегральная функция
+\begin{equation}
+L = \left| \nabla f - \textbf{v} \right|^2 = \left( \frac{\partial f}{\partial x_1} - v_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2} - v_{x_2} \right)^2 + \ldots + \left( \frac{\partial f}{\partial x_n} - v_{x_n} \right)^2 = 
+\end{equation}
+\begin{equation}
+= \sum_{i=1}^n \left( \frac{\partial f}{\partial x_i} - v_{x_i} \right)^2
+\end{equation}
+ Вычислим соответствующие частные производные:
+\begin{equation}
+L_f = \frac{\partial L}{\partial f} = 0
+\end{equation}
+\begin{equation}
+L_{f_{x_i}} = \frac{\partial L}{\partial \left(\frac{\partial f}{\partial x_i} \right)} = 2 \left(\frac{\partial f}{\partial x_i} - v_{x_i} \right)
+\end{equation}
+
+
+Тогда уравнение Эйлера-Лагранжа (\ref{Euler}) примет вид:
+\begin{equation}
+-2 \frac{\partial}{\partial x_1} \left( \frac{\partial f}{\partial x_1} - v_{x_1} \right) -2 \frac{\partial}{\partial x_2} \left( \frac{\partial f}{\partial x_2} - v_{x_2} \right) - \ldots -2 \frac{\partial}{\partial x_n} \left( \frac{\partial f}{\partial x_n} - v_{x_n} \right) = 0
+\end{equation}
+
+\begin{equation}
+\left( \frac{\partial^2}{\partial x_1^2} + \frac{\partial^2}{\partial x_2^2} + \ldots + \frac{\partial^2}{\partial x_n^2} \right) f - \left( \frac{\partial v_{x_1}}{\partial x_1} + \frac{\partial v_{x_2}}{\partial x_2} + \ldots + \frac{\partial v_{x_n}}{\partial x_n} \right)= 0
+\end{equation}
+
+Вводя оператор Лапласа $$\Delta = \sum_{i=1}^n \frac{\partial^2}{\partial x_i^2}$$ и оператор дивергенции $$div \textbf{v} = \sum_{i=1}^n \frac{\partial v_{x_i}}{\partial x_i}$$ и учитывая полученное соотношение, исходную задачу (\ref{min})-(\ref{dirichle}) можно привести к виду:
+\begin{align}
+\Delta f = div v \label{poisson}\\
+f|_{\delta\Omega} = f^*_{\delta\Omega} \label{dirichle2}
+\end{align}
+
+Задача (\ref{poisson})-(\ref{dirichle2}) является уравнением Пуассона с граничными условиями Дирихле. %Далее данная задача дискретизируется и решается численными методами.
+
+\section{Приближение методом конечных разностей}
+
+Вариационная задача (\ref{min})-(\ref{dirichle}) и соответствующее ей уравнение Пуассона (\ref{poisson}) с граничными условиями Дирихле (\ref{dirichle2}) могут быть дискретезированы и решены методом конечных разностей.
+
+Пусть $S,\Omega$ — множества, состоящие из конечного числа точек, определённые на бесконечной дискретной сетке. Отметим, что $S$ может включать все точки карты признака или только часть их них. Для каждого пикселя $p\in S$ определим $2n$ направлений минимизации. Обозначим через $N_p$ множество ближайших соседей по этим направлениям из множества $S$, число которых ограничено $2n$, а также через $\langle p,q \rangle$ обозначим пару точек, где $q \in N_p$. Граница $\Omega$ есть $\delta \Omega = \lbrace p \in S \backslash \Omega : N_p \cap \Omega \neq 0 \rbrace$. $f_p$ — значение $f$ в точке $p$. Тогда задача сводится к расчёту набора интенсивностей $f|_\Omega = \lbrace f_p, p \in \Omega \rbrace$.
+
+Для дискретизации задачи (\ref{min})-(\ref{dirichle}) воспользуемся односторонней аппроксимацией градиента по каждому из направлений минимизации. После подстановки получаем:
+\begin{equation}
+\begin{cases}
+	\min_{f|_\Omega} \sum_{\langle p,q \rangle \cap \Omega \neq 0} \left( f_p - f_q - v_{pq} \right)^2 \\
+	f_p = f^*_q, \; \forall p \in \delta \Omega,
+\end{cases}
+\end{equation}
+где $v_{pq}$ — проекция $\textbf{v} \left(\frac{p+q}{2} \right)$ на направление $(p,q)$.
+
+Дискретизация задачи (\ref{poisson}) использует аппроксимацию оператора Лапласа по схеме "крест":
+\begin{align}
+\frac{\partial^2 f}{\partial x^2} = \frac{f(x+h,y) - 2f(x,y) + f(x-h,y)}{h^2} = \Lambda_x f \\
+\frac{\partial^2 f}{\partial y^2} = \frac{f(x,y+h) - 2f(x,y) + f(x,y-h}{h^2} = \Lambda_y f,
+\end{align}
+где шаг сетки $h=1$ по обоим направлениям, т.к. он соответствует расстоянию между пикселями. $\Delta = \Lambda_x + \Lambda_y$.
+
+\section{Склейка двумерных карт признаков}
+
+Результат работы алгоритма для двумерных карт признаков представлен на Рис. \ref{target2d}-\ref{res2d}.
+
+На Рис.\ref{target2d} изображены две карты признаков, расположенные рядом друг с другом с небольшим наложением одной поверх второй. Область пересечения обозначена красным цветом. Границу раздела двух изображений можно видеть невооружённым глазом.
+
+\begin{figure}[htbp]
+\begin{subfigure}{1.0\textwidth}
+  \centering  
+  \includegraphics[width=0.8\textwidth]{images/target.jpg}
+  \caption{}\label{target2d}
+\end{subfigure}
+
+\begin{subfigure}{1.0\textwidth}
+  \centering  
+  \includegraphics[width=0.8\textwidth]{images/res.jpg}
+  \caption{}\label{res2d}
+\end{subfigure}
+  \caption{Изображения, полученные путём а) — наложения без сглаживания; b) — наложения со сглаживанием.}
+\end{figure}
+
+
+На Рис.\ref{res2d} изображены те же самые карты признаков, но в области их пересечения был применён алгоритм сглаживания. Как можно видеть, граница раздела двух изображений была полностью стёрта. В результате мы имеем одну карту признака области большего размера, полученную из двух карт областей меньшего размера.
+
+\section{Склейка трёхмерных карт признаков}
+
+Предложенный алгоритм также может быть обобщён на трёхмерные карты признаков. Формулы (\ref{min})-(\ref{dirichle2}) справедливы и в том случае, когда области $S$ и $\Omega$ являются подмножествами $R^3$, а функции $f$ и $f^*$ определены на соответствующих трёхмерных областях. Отличия от соответствующей двумерной задачи возникают лишь на этапе её дискретизации и решении численными методами, учёт которых не представляет из себя существенной трудности.
+
+На Рис.\ref{target3d}-\ref{res3d}
+представлен результат работы алгоритма для трёхмерных карт признаков.
+
+На рисунках изображены три различных среза карт признаков, так что видна внутренняя часть областей. Как мы видим на Рис.\ref{target3d}, в области пересечения можно наблюдать чётко выделенную границу раздела двух карт признаков. Однако в результате сглаживания (Рис.\ref{res3d}) граница раздела исчезает и становится незаметной, причём как на поверхности, так и внутри карты. Таким образом, в результате мы имеем одну карту признака области большего размера, полученную из двух карт трёхмерных областей меньшего размера.
+\begin{figure}[htbp]
+\begin{subfigure}{1.0\textwidth}
+  \centering  
+  \includegraphics[width=0.8\textwidth]{images/slicesnoblending.png}
+  \caption{}\label{target3d}
+\end{subfigure}
+
+\begin{subfigure}{1.0\textwidth}
+  \centering  
+  \includegraphics[width=0.8\textwidth]{images/slices.png}
+  \caption{}\label{res3d}
+\end{subfigure}
+  \caption{Срезы трёхмерных карт признаков, полученные путём а) — наложения без сглаживания; b) — наложения со сглаживанием.}
+\end{figure}
+
+\section{Заключение}
+В результате данной работы был разработан инструмент, позволяющий состыковать несколько карт признаков (дву- или трёхмерных), чтобы получить одну карту объекта большего размера.
+
+В дальнейшем, имея данный инструмент, можно будет приступить непосредственно к решению проблемы ремасштабирования карт признаков.
+
+\begin{thebibliography}{9}
+\bibitem{Perez}P. Perez, M. Gangnet, and A. Blake, Poisson image editing, ACM Transactions on Graphics, 22 (2003), p. 313.
+\bibitem{Matias}J. Matías Di Martino, Gabriele Facciolo, and Enric Meinhardt-Llopis, Poisson Image Editing, Image Processing On Line, 6 (2016), pp. 300–325.
+\bibitem{Springer}  E. Z. Nonlinear functional analysis and its applications: Variational methods and optimization.
+— Springer, 1985. — P. 662.
+\end{thebibliography}
+
+\end{document}
