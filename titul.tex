@@ -11,6 +11,7 @@
 \usepackage{amsmath}
 \usepackage{wrapfig}
 \usepackage{float}
+\usepackage{verbatim}
 
 \def\Rspace{\mathbb{R}}
 
@@ -139,19 +140,14 @@ f|_{\delta\Omega} = f^*_{\delta\Omega},
 	\end{cases}
 \end{equation}
 
-где $f_{x_i} = \frac{\partial f}{\partial x_i}, i=1,\ldots,n$ и $g$ — некоторая непрерывная функция.
+где $f_{x_i} = \frac{\partial f}{\partial x_i}, \; i=\overline{1,n}$ и $g$ — некоторая непрерывная функция.
 
 Согласно \cite{Springer}, если функция $f$ является решением многомерной обобщённой вариационной задачи, то она также удовлетворяет уравнению Эйлера-Лагранжа на $\Omega$:
-\begin{equation}
+\begin{equation}\label{Euler}
 \frac{\partial L}{\partial f} - \sum_{i=1}^n \frac{\partial L_{f_{x_i}}}{\partial x_i} = 0,
 \end{equation}
 
-где $L_{f_{x_i}} = \frac{\partial L}{\partial f_{x_i}}$.
-
-При $n=2$ соответственно получаем:
-\begin{equation}\label{Euler}
-\frac{\partial L}{\partial f} - \frac{\partial L_{f_x}}{\partial x} - \frac{\partial L_{f_y}}{\partial y} = 0.
-\end{equation}
+где $L_{f_{x_i}} = \frac{\partial L}{\partial f_{x_i}}, \; i=\overline{1,n}$.
 
 Вернёмся к исходной задаче. Подынтегральная функция
 \begin{equation}
@@ -165,7 +161,7 @@ L = \left| \nabla f - \textbf{v} \right|^2 = \left( \frac{\partial f}{\partial x
 L_f = \frac{\partial L}{\partial f} = 0
 \end{equation}
 \begin{equation}
-L_{f_{x_i}} = \frac{\partial L}{\partial \left(\frac{\partial f}{\partial x_i} \right)} = 2 \left(\frac{\partial f}{\partial x_i} - v_{x_i} \right)
+L_{f_{x_i}} = \frac{\partial L}{\partial \left(\frac{\partial f}{\partial x_i} \right)} = 2 \left(\frac{\partial f}{\partial x_i} - v_{x_i} \right), \; i=\overline{1,n}
 \end{equation}
 
 
@@ -202,11 +198,29 @@ f|_{\delta\Omega} = f^*_{\delta\Omega} \label{dirichle2}
 где $v_{pq}$ — проекция $\textbf{v} \left(\frac{p+q}{2} \right)$ на направление $(p,q)$.
 
 Дискретизация задачи (\ref{poisson}) использует аппроксимацию оператора Лапласа по схеме "крест":
+
+\begin{equation}
+\Delta f = \frac{1}{h^2}\sum_{q \in N_p \cap \Omega} \left(f_p - f_q \right) = \frac{1}{h^2} \left( |N_p|f_p - \sum_{q \in N_p \cap \Omega} f_q \right),
+\end{equation}
+где шаг сетки $h=1$ по всем направлениям, т.к. он соответствует расстоянию между пикселями; $|N_p|$ — число ближайших соседей точки $p$ или, что то же самое, число элементов множества $N_p \cap \Omega$.
+
+	\begin{comment}
+\begin{equation}
+\Delta f = \frac{\partial^2 f}{\partial x_1} + \frac{\partial^2 f}{\partial x_2} + \ldots + \frac{\partial^2 f}{\partial^2 x_n}
+\end{equation}
+\begin{align}
+\frac{\partial^2 f}{\partial x_i^2} = \frac{1}{h^2} \left( f(x_1,\ldots,x_i+h,\ldots,x_n) - 2f(x_1,\ldots,x_i,\ldots,x_n)+\right.\\
+\left. + f(x_1,\ldots,x_i-h,\ldots,x_n) \right), & i=\overline{1,n} \nonumber
+\end{align}
+\end{comment}
+
+\begin{comment}
 \begin{align}
 \frac{\partial^2 f}{\partial x^2} = \frac{f(x+h,y) - 2f(x,y) + f(x-h,y)}{h^2} = \Lambda_x f \\
-\frac{\partial^2 f}{\partial y^2} = \frac{f(x,y+h) - 2f(x,y) + f(x,y-h}{h^2} = \Lambda_y f,
+\frac{\partial^2 f}{\partial y^2} = \frac{f(x,y+h) - 2f(x,y) + f(x,y-h)}{h^2} = \Lambda_y f,
 \end{align}
-где шаг сетки $h=1$ по обоим направлениям, т.к. он соответствует расстоянию между пикселями. $\Delta = \Lambda_x + \Lambda_y$.
+\end{comment}
+
 
 \section{Склейка двумерных карт признаков}
 
