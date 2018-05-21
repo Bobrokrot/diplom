@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.7)  12 MAY 2018 21:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.7)  21 MAY 2018 15:55
 entering extended mode
 **./titul.tex
 (titul.tex
@@ -730,20 +730,20 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 \openout1 = `titul.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 (D:\MikTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -775,11 +775,11 @@ See the caption package documentation for explanation.
 Package caption Info: float package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 49.
+LaTeX Font Info:    Try loading font information for U+msa on input line 50.
 (D:\MikTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 49.
+LaTeX Font Info:    Try loading font information for U+msb on input line 50.
  (D:\MikTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -792,74 +792,82 @@ LaTeX Font Info:    Try loading font information for T2A+cmss on input line 96.
 
 (D:\MikTeX\tex\latex\cyrillic\t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)
-<images/notations.jpg, id=8, 563.10374pt x 313.17pt>
+) (titul.toc)
+\tf@toc=\write3
+\openout3 = `titul.toc'.
+
+ [2]
+<images/notations.jpg, id=13, 563.10374pt x 313.17pt>
 File: images/notations.jpg Graphic file (type jpg)
 
 <use images/notations.jpg>
-Package pdftex.def Info: images/notations.jpg used on input line 120.
+Package pdftex.def Info: images/notations.jpg used on input line 123.
 (pdftex.def)             Requested size: 362.37573pt x 201.53673pt.
- [2 <./images/notations.jpg>] [3] [4]
-<images/target.jpg, id=31, 733.99219pt x 376.40625pt>
+ [3 <./images/notations.jpg>] [4] [5] [6]
+<images/target.jpg, id=38, 733.99219pt x 376.40625pt>
 File: images/target.jpg Graphic file (type jpg)
  <use images/target.jpg>
-Package pdftex.def Info: images/target.jpg used on input line 234.
+Package pdftex.def Info: images/target.jpg used on input line 287.
 (pdftex.def)             Requested size: 362.37573pt x 185.83633pt.
 
-<images/res.jpg, id=32, 733.99219pt x 376.40625pt>
+<images/res.jpg, id=39, 733.99219pt x 376.40625pt>
 File: images/res.jpg Graphic file (type jpg)
  <use images/res.jpg>
-Package pdftex.def Info: images/res.jpg used on input line 240.
+Package pdftex.def Info: images/res.jpg used on input line 293.
 (pdftex.def)             Requested size: 362.37573pt x 185.83633pt.
 
-[5 <./images/target.jpg> <./images/res.jpg>]
-<images/slicesnoblending.png, id=36, 975.645pt x 771.88374pt>
+[7] [8 <./images/target.jpg> <./images/res.jpg>]
+<images/slicesnoblending.png, id=48, 975.645pt x 771.88374pt>
 File: images/slicesnoblending.png Graphic file (type png)
 
 <use images/slicesnoblending.png>
-Package pdftex.def Info: images/slicesnoblending.png used on input line 260.
+Package pdftex.def Info: images/slicesnoblending.png used on input line 313.
 (pdftex.def)             Requested size: 362.37573pt x 286.68787pt.
 
-<images/slices.png, id=37, 975.645pt x 771.88374pt>
+<images/slices.png, id=49, 975.645pt x 771.88374pt>
 File: images/slices.png Graphic file (type png)
  <use images/slices.png>
-Package pdftex.def Info: images/slices.png used on input line 266.
+Package pdftex.def Info: images/slices.png used on input line 319.
 (pdftex.def)             Requested size: 362.37573pt x 286.68787pt.
 
 
-LaTeX Warning: Float too large for page by 2.81874pt on input line 270.
+LaTeX Warning: Float too large for page by 2.81874pt on input line 323.
 
-[6] [7 <./images/slicesnoblending.png (PNG copy)> <./images/slices.png (PNG cop
-y)>] (titul.aux) ) 
+[9] [10 <./images/slicesnoblending.png (PNG copy)> <./images/slices.png (PNG co
+py)>] (titul.aux) ) 
 Here is how much of TeX's memory you used:
- 6242 strings out of 493634
- 88749 string characters out of 3150942
- 219447 words of memory out of 3000000
- 9523 multiletter control sequences out of 15000+200000
- 18928 words of font info for 45 fonts, out of 3000000 for 9000
+ 6263 strings out of 493634
+ 89139 string characters out of 3150942
+ 219477 words of memory out of 3000000
+ 9540 multiletter control sequences out of 15000+200000
+ 19811 words of font info for 46 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 43i,8n,50p,1364b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Documents and Settings\Администратор\Local 
-Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.
-pk> <C:\Documents and Settings\Администратор\Local Settings\Applic
-ation Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk> <C:\Documen
-ts and Settings\Администратор\Local Settings\Application Data\MiKT
-eX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1728.pk> <C:\Documents and Settings
-\Администратор\Local Settings\Application Data\MiKTeX\2.9\fonts\pk
-\ljfour\lh\lh-t2a\dpi600\larm1095.pk> <C:\Documents and Settings\Админис
-тратор\Local Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t
-2a\dpi600\labx2074.pk> <C:\Documents and Settings\Администратор\Lo
-cal Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1
-200.pk><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi12.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MikTeX/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr6.
-pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MikTeX/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pf
-b><D:/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on titul.pdf (7 pages, 1245776 bytes).
+ 43i,8n,50p,1365b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Documents and Settings\Администратор\Local
+ Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati2074
+.pk> <C:\Documents and Settings\Администратор\Local Settings\Appli
+cation Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.pk> <C:\Docume
+nts and Settings\Администратор\Local Settings\Application Data\MiK
+TeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk> <C:\Documents and Setting
+s\Администратор\Local Settings\Application Data\MiKTeX\2.9\fonts\p
+k\ljfour\lh\lh-t2a\dpi600\lasx1200.pk> <C:\Documents and Settings\Админи�
+�тратор\Local Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-
+t2a\dpi600\lasx1728.pk> <C:\Documents and Settings\Администратор\L
+ocal Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm
+1095.pk> <C:\Documents and Settings\Администратор\Local Settings\A
+pplication Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2074.pk> <C:\Do
+cuments and Settings\Администратор\Local Settings\Application Data
+\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk><D:/MikTeX/fonts/type1
+/public/amsfonts/cm/cmex10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTeX/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr12.p
+fb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTeX/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on titul.pdf (10 pages, 1278213 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
+ 400 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
