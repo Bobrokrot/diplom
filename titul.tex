@@ -189,7 +189,7 @@ L_{f_{x_i}} = \frac{\partial L}{\partial \left(\frac{\partial f}{\partial x_i} \
 
 Вводя оператор Лапласа $$\Delta = \sum_{i=1}^n \frac{\partial^2}{\partial x_i^2}$$ и оператор дивергенции $$div \textbf{v} = \sum_{i=1}^n \frac{\partial v_{x_i}}{\partial x_i}$$ и учитывая полученное соотношение, исходную задачу (\ref{min})-(\ref{dirichle}) можно привести к виду:
 \begin{align}
-\Delta f = div v \label{poisson}\\
+\Delta f = div \textbf{v} \label{poisson}\\
 f|_{\delta\Omega} = f^*_{\delta\Omega} \label{dirichle2}
 \end{align}
 
@@ -218,7 +218,7 @@ f|_{\delta\Omega} = f^*_{\delta\Omega} \label{dirichle2}
 где шаг сетки $h=1$ по всем направлениям, т.к. он соответствует расстоянию между пикселями; $|N_p|$ — число ближайших соседей точки $p$ или, что то же самое, число элементов множества $N_p \cap \Omega$. Для двумерных изображений $|N_p| = 4$ во внутренних точках области $\Omega$ и $N_p<4$ — в точках на границе $S$.
 
 После подстановки аппроксимации оператора Лапласа в задачу (\ref{poisson}) и учёта граничных условий (\ref{dirichle2}) получаем систему уравнений:
-\begin{equation}
+\begin{equation} \label{discrete}
 |N_p|f_p - \sum_{q \in N_p \cap \Omega}f_q = \sum_{q \in N_p \cap \delta \Omega} f^*_q + \sum_{q \in N_p} v_{pq}, \; \forall p \in \Omega
 \end{equation}
 
@@ -242,6 +242,7 @@ f|_{\delta\Omega} = f^*_{\delta\Omega} \label{dirichle2}
 f|_{\delta\Omega} = f^*_{\delta\Omega},
 \end{equation}
 
+\subsection{Метод замены градиента}
 Простейший выбор $\textbf{v}$ состоит в том, чтобы выбрать его равным градиенту одной из накладываемых карт:
 \begin{equation}
 \textbf{v} = \nabla g,
@@ -253,12 +254,21 @@ f|_{\delta\Omega} = f^*_{\delta\Omega},
 \min_f \int\int_\Omega |\nabla f-\textbf{v}|^2 = \min_f \int\int_\Omega |\nabla f-\nabla g|^2
 \end{equation}
 
-{\LARGE\textit{подстановка v в уравнение Пуассона и разностную схему...}}
+Уравнение Пуассона (\ref{poisson}) преобразуется следующим образом:
+\begin{equation}
+\Delta f = div \nabla g = \Delta g
+\end{equation}
+
+А дискретизация и соответствующая система линейных уравнений (\ref{discrete}) выглядит следующим образом:
+\begin{equation}
+|N_p|f_p - \sum_{q \in N_p \cap \Omega}f_q = \sum_{q \in N_p \cap \delta \Omega} f^*_q + \sum_{q \in N_p} \left( g_p - g_q \right), \; \forall p \in \Omega
+\end{equation}
 
 Данная задача представляет собой задачу о минимизации разности градиентов искомой карты признаков и одной из накладываемых. Таким образом, решение задачи будет иметь градиент, максимально схожий с градиентом одной из данных карт. Тем самым гарантируется гладкость получаемого изображение на стыке двух карт.
 
 Однако такой подход учитывает градиент лишь одной из накладываемых карт. В случае, когда у одного из изображений на границе присутствуют некоторые характерные особенности, такой выбор $\textbf{v}$ может привести к нежелательным результатам.
 
+\subsection{Метод усреднённого градиента}
 Одним из подходов, учитывающих градиенты обеих карт признаков, является метод усреднённого градиента:
 \begin{equation}
 \textbf{v} = \frac{1}{2} \left( \nabla g_1 + \nabla g_2 \right),
@@ -267,6 +277,18 @@ f|_{\delta\Omega} = f^*_{\delta\Omega},
 
 Взяв в качестве вектора направлений $\textbf{v}$ усреднённый градиент обоих изображений, мы сможем получить гладкий переход из одного изображения в другое.
 
+При таком выборе параметра $\textbf{v}$ соответствующие функционал в задаче минимизации (\ref{minv}), уравнение Пуассона (\ref{poisson}) и система линейных уравнений (\ref{discrete}) выглядят следующим образом:
+\begin{equation}
+\min_f \int\int_\Omega |\nabla f-\frac{1}{2} \nabla g_1 - \frac{1}{2} \nabla g_2|^2
+\end{equation}
+\begin{equation}
+\Delta f = \frac{1}{2} \Delta g_1 + \frac{1}{2} \Delta g_2
+\end{equation}
+\begin{equation}
+|N_p|f_p - \sum_{q \in N_p \cap \Omega}f_q = \sum_{q \in N_p \cap \delta \Omega} f^*_q + \frac{1}{2}\sum_{q \in N_p} \left( g_{1p} - g_{1q} \right) + \frac{1}{2}\sum_{q \in N_p} \left( g_{2p} - g_{2q} \right), \; \forall p \in \Omega
+\end{equation}
+
+\subsection{Метод максимума градиентов}
 Другим подходом, учитывающим особенности обеих карт признаков, является метод сохранения максимального значения градиента, где вектор направлений вводится следующим образом:
 \begin{equation}
 \textbf{v}(x) = \left\lbrace \begin{array}{lr}
@@ -274,6 +296,17 @@ f|_{\delta\Omega} = f^*_{\delta\Omega},
 \nabla g_2(x), & |g_1(x)| < |g_2(x)|
 \end{array} \right.
 \end{equation}
+
+Соответствующая дискретизация данного вектора $v_{pq}$ в (\ref{discrete}) выглядит следующим образом:
+\begin{equation}
+v_{pq} = \left\lbrace \begin{array}{lr}
+g_{1p} - g_{1q}, & |g_{1p} - g_{1q}| \geq |g_{2p}-g_{2q}| \\
+g_{2p}-g_{2q}, & |g_{1p} - g_{1q}| < |g_{2p}-g_{2q}|
+\end{array} \right.
+\end{equation}
+
+В данном подходе в векторе $\textbf{v}$ сохраняется информация о скачках градиента в обеих картах признака. Тем самым, на результирующем изображении сохранятся области одинаковой интенсивности с чётко выраженными границами между ними, которые и характеризуются скачками градиента.
+
 
 \section{Склейка двумерных карт признаков}
 
@@ -296,7 +329,46 @@ f|_{\delta\Omega} = f^*_{\delta\Omega},
   \caption{Изображения, полученные путём а) — наложения без сглаживания; b) — наложения со сглаживанием.}
 \end{figure}
 
-
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/test5_target.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/res_sourcegrad.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/res_targetgrad.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/test5_ret_average.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/res_max.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/test6_target.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/test6_ret_targetgrad.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/test6_ret_sourcegrad.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/test6_ret_average.png}
+\end{figure}
+\begin{figure}[htbp]
+  \centering  
+  \includegraphics[width=1.0\textwidth]{images/test6_ret_mixed.png}
+\end{figure}
 На Рис.\ref{res2d} изображены те же самые карты признаков, но в области их пересечения был применён алгоритм сглаживания. Как можно видеть, граница раздела двух изображений была полностью стёрта. В результате мы имеем одну карту признака области большего размера, полученную из двух карт областей меньшего размера.
 
 \section{Склейка трёхмерных карт признаков}
