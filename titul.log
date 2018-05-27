@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.7)  27 MAY 2018 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.7)  27 MAY 2018 19:30
 entering extended mode
 **./titul.tex
 (titul.tex
@@ -801,41 +801,41 @@ File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 File: images/notations.jpg Graphic file (type jpg)
 
 <use images/notations.jpg>
-Package pdftex.def Info: images/notations.jpg used on input line 127.
+Package pdftex.def Info: images/notations.jpg used on input line 130.
 (pdftex.def)             Requested size: 362.37573pt x 201.53673pt.
  [4 <./images/notations.jpg>] [5] [6] [7] [8]
 <images/test5_target.png, id=46, 953.5625pt x 501.875pt>
 File: images/test5_target.png Graphic file (type png)
 
 <use images/test5_target.png>
-Package pdftex.def Info: images/test5_target.png used on input line 352.
+Package pdftex.def Info: images/test5_target.png used on input line 355.
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
 <images/res_sourcegrad.png, id=47, 953.5625pt x 501.875pt>
 File: images/res_sourcegrad.png Graphic file (type png)
 
 <use images/res_sourcegrad.png>
-Package pdftex.def Info: images/res_sourcegrad.png used on input line 357.
+Package pdftex.def Info: images/res_sourcegrad.png used on input line 360.
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
 <images/res_targetgrad.png, id=48, 953.5625pt x 501.875pt>
 File: images/res_targetgrad.png Graphic file (type png)
 
 <use images/res_targetgrad.png>
-Package pdftex.def Info: images/res_targetgrad.png used on input line 362.
+Package pdftex.def Info: images/res_targetgrad.png used on input line 365.
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
 <images/test5_ret_average.png, id=49, 953.5625pt x 501.875pt>
 File: images/test5_ret_average.png Graphic file (type png)
 
 <use images/test5_ret_average.png>
-Package pdftex.def Info: images/test5_ret_average.png used on input line 367.
+Package pdftex.def Info: images/test5_ret_average.png used on input line 370.
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
 <images/res_max.png, id=50, 953.5625pt x 501.875pt>
 File: images/res_max.png Graphic file (type png)
  <use images/res_max.png>
-Package pdftex.def Info: images/res_max.png used on input line 372.
+Package pdftex.def Info: images/res_max.png used on input line 375.
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
 [9 <./images/test5_target.png (PNG copy)>] [10 <./images/res_sourcegrad.png (PN
@@ -845,14 +845,14 @@ age.png (PNG copy)> <./images/res_max.png (PNG copy)>]
 File: images/test6_target.png Graphic file (type png)
 
 <use images/test6_target.png>
-Package pdftex.def Info: images/test6_target.png used on input line 390.
+Package pdftex.def Info: images/test6_target.png used on input line 393.
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
 <images/test6_ret_sourcegrad.png, id=61, 953.5625pt x 501.875pt>
 File: images/test6_ret_sourcegrad.png Graphic file (type png)
 
 <use images/test6_ret_sourcegrad.png>
-Package pdftex.def Info: images/test6_ret_sourcegrad.png used on input line 395
+Package pdftex.def Info: images/test6_ret_sourcegrad.png used on input line 398
 .
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
@@ -860,7 +860,7 @@ Package pdftex.def Info: images/test6_ret_sourcegrad.png used on input line 395
 File: images/test6_ret_targetgrad.png Graphic file (type png)
 
 <use images/test6_ret_targetgrad.png>
-Package pdftex.def Info: images/test6_ret_targetgrad.png used on input line 400
+Package pdftex.def Info: images/test6_ret_targetgrad.png used on input line 403
 .
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
@@ -868,80 +868,83 @@ Package pdftex.def Info: images/test6_ret_targetgrad.png used on input line 400
 File: images/test6_ret_average.png Graphic file (type png)
 
 <use images/test6_ret_average.png>
-Package pdftex.def Info: images/test6_ret_average.png used on input line 405.
+Package pdftex.def Info: images/test6_ret_average.png used on input line 408.
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
 
 <images/test6_ret_mixed.png, id=64, 953.5625pt x 501.875pt>
 File: images/test6_ret_mixed.png Graphic file (type png)
 
 <use images/test6_ret_mixed.png>
-Package pdftex.def Info: images/test6_ret_mixed.png used on input line 410.
+Package pdftex.def Info: images/test6_ret_mixed.png used on input line 413.
 (pdftex.def)             Requested size: 452.96796pt x 238.40842pt.
  [12] [13 <./images/test6_target.png (PNG copy)> <./images/test6_ret_sourcegrad
 .png (PNG copy)>] [14 <./images/test6_ret_targetgrad.png (PNG copy)> <./images/
-test6_ret_average.png (PNG copy)>]
-<images/means2.png, id=75, 1022.6205pt x 742.9356pt>
+test6_ret_average.png (PNG copy)>] [15 <./images/test6_ret_mixed.png (PNG copy)
+>]
+<images/means2.png, id=78, 1022.6205pt x 742.9356pt>
 File: images/means2.png Graphic file (type png)
  <use images/means2.png>
-Package pdftex.def Info: images/means2.png used on input line 432.
+Package pdftex.def Info: images/means2.png used on input line 441.
 (pdftex.def)             Requested size: 452.96796pt x 329.08057pt.
 
-[15 <./images/test6_ret_mixed.png (PNG copy)>] [16 <./images/means2.png>]
+[16 <./images/means2.png>]
 <images/slicesnoblending.png, id=82, 975.645pt x 771.88374pt>
 File: images/slicesnoblending.png Graphic file (type png)
 
 <use images/slicesnoblending.png>
-Package pdftex.def Info: images/slicesnoblending.png used on input line 449.
+Package pdftex.def Info: images/slicesnoblending.png used on input line 477.
 (pdftex.def)             Requested size: 362.37573pt x 286.68787pt.
 
 <images/slices.png, id=83, 975.645pt x 771.88374pt>
 File: images/slices.png Graphic file (type png)
  <use images/slices.png>
-Package pdftex.def Info: images/slices.png used on input line 455.
+Package pdftex.def Info: images/slices.png used on input line 483.
 (pdftex.def)             Requested size: 362.37573pt x 286.68787pt.
 
 
-LaTeX Warning: Float too large for page by 2.81874pt on input line 459.
+LaTeX Warning: Float too large for page by 2.81874pt on input line 487.
 
 [17] [18 <./images/slicesnoblending.png (PNG copy)> <./images/slices.png (PNG c
-opy)>] (titul.aux)
+opy)>]
+Overfull \hbox (8.9265pt too wide) in paragraph at lines 496--497
+\T2A/cmr/m/n/12 ����-��-��-��-�� ���-��. �� ���� ���-��� ��-�� ���-��-��-�� ��-
+��-�����-��� ����-��-��� �������-
+ []
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[19] (titul.aux) ) 
 Here is how much of TeX's memory you used:
- 6318 strings out of 493634
- 90582 string characters out of 3150942
- 220545 words of memory out of 3000000
- 9586 multiletter control sequences out of 15000+200000
+ 6321 strings out of 493634
+ 90626 string characters out of 3150942
+ 220564 words of memory out of 3000000
+ 9589 multiletter control sequences out of 15000+200000
  19754 words of font info for 46 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 43i,10n,50p,1426b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Documents and Settings\Администратор\Local Settings\Applica
-tion Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1440.pk> <C:\Document
-s and Settings\Администратор\Local Settings\Application Data\MiKTe
-X\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.pk> <C:\Documents and Settings\
-Администратор\Local Settings\Application Data\MiKTeX\2.9\fonts\pk\
-ljfour\lh\lh-t2a\dpi600\labx1200.pk> <C:\Documents and Settings\Админис�
-�ратор\Local Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2
-a\dpi600\lasx1200.pk> <C:\Documents and Settings\Администратор\Loc
-al Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx17
-28.pk> <C:\Documents and Settings\Администратор\Local Settings\App
-lication Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1095.pk> <C:\Docu
-ments and Settings\Администратор\Local Settings\Application Data\M
-iKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2074.pk> <C:\Documents and Setti
-ngs\Администратор\Local Settings\Application Data\MiKTeX\2.9\fonts
-\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk><D:/MikTeX/fonts/type1/public/amsfonts/
-cm/cmex10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MikTeX/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTeX/fonts/type1/public/amsfonts/
-cm/cmmi8.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MikTeX/fon
-ts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/
-cmr8.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTeX/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTeX/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb>
-Output written on titul.pdf (18 pages, 3674087 bytes).
+ 43i,10n,50p,2255b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Documents and Settings\Администратор\Local 
+Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1440.
+pk> <C:\Documents and Settings\Администратор\Local Settings\Applic
+ation Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.pk> <C:\Documen
+ts and Settings\Администратор\Local Settings\Application Data\MiKT
+eX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk> <C:\Documents and Settings
+\Администратор\Local Settings\Application Data\MiKTeX\2.9\fonts\pk
+\ljfour\lh\lh-t2a\dpi600\lasx1200.pk> <C:\Documents and Settings\Админис
+тратор\Local Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t
+2a\dpi600\lasx1728.pk> <C:\Documents and Settings\Администратор\Lo
+cal Settings\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1
+095.pk> <C:\Documents and Settings\Администратор\Local Settings\Ap
+plication Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2074.pk> <C:\Doc
+uments and Settings\Администратор\Local Settings\Application Data\
+MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk><D:/MikTeX/fonts/type1/
+public/amsfonts/cm/cmex10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTeX/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr12.pf
+b><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTeX/fonts/type1/publi
+c/amsfonts/symbols/msbm10.pfb>
+Output written on titul.pdf (19 pages, 3679770 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
+ 446 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
